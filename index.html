@@ -1,0 +1,97 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section id="nav">
+      <div class="topnav" id="topnav">
+        <a id="nav" href="#" class="active""
+          ><i class="fa fa-fw fa-home"></i
+        ></a>
+        <a id="about" href="#about-section" onclick="navClick(this)"
+          ><i class="fa fa-fw fa-home"></i>About</a
+        >
+        <a id="search" href="#apps-section" onclick="navClick(this)"
+          ><i class="fa fa-fw fa-search"></i>Apps</a
+        >
+        <a id="resume" href="#resume" onclick="navClick(this)"
+          ><i class="fa fa-fw fa-user"></i>Resume</a
+        >
+        <a id="contact" href="#contact" onclick="navClick(this)"
+          ><i class="fa fa-fw fa-envelope"></i>Contact</a
+        >
+        <a href="javascript:void(0);" class="icon" onclick="toggleMobileNav()">
+          <div
+            id="hamburger-container"
+            onclick="toggleHamburger(this)"
+          >
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section id="banner">
+      <h1 class="banner-h1">JP Earnest</h1>
+    </section>
+    <section id="about-section" class="section-container">
+      <h3>About</h3>
+      <div class="about-text">
+        <p>
+          Hi!
+        </p>
+        <p>
+          I'm JP Earnest. I'm a software developer focused on web and cloud
+          projects.
+        </p>
+        <p>
+          I worked through a fullstack javascript bootcamp, learning to make web
+          applications. Then I became a product developer for a data company,
+          where I've spent the past two years.
+        </p>
+        <p>
+          Currently, I spend most of my time augmenting pipeline and deployment
+          processes running on Kubernetes and AWS.
+        </p>
+        <p>You can find my blog posts and sideprojects below.</p>
+      </div>
+    </section>
+    <section id="apps-section" class="section-container">
+      <h3>Apps</h3>
+      <div class="app-container">
+        <h4>BookStore App</h4>
+        <img src="./bookStore.jpg" alt="bookstore app" class="app-image" />
+        <p>A brief description will go here</p>
+      </div>
+    </section>
+  </body>
+
+  <script>
+    function navClick(e) {
+      // var targetClass = e.target.class;
+      console.log(e.id);
+      toggleMobileNav();
+      toggleHamburger(document.getElementById('hamburger-container'));
+    }
+    function toggleMobileNav() {
+      var x = document.getElementById('topnav');
+      if (x.className === 'topnav') {
+        x.className += ' responsive';
+      } else {
+        x.className = 'topnav';
+      }
+    }
+    function toggleHamburger(x) {
+      x.classList.toggle('change');
+    }
+  </script>
+</html>
