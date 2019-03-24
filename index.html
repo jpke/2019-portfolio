@@ -13,39 +13,46 @@
   <body>
     <section id="nav">
       <div class="topnav" id="topnav">
-        <a id="nav" href="#" class="active""
-          ><i class="fa fa-fw fa-home"></i
-        ></a>
-        <a id="about" href="#about-section" onclick="navClick(this)"
-          ><i class="fa fa-fw fa-home"></i>About</a
-        >
-        <a id="search" href="#apps-section" onclick="navClick(this)"
-          ><i class="fa fa-fw fa-search"></i>Apps</a
-        >
-        <a id="resume" href="#resume" onclick="navClick(this)"
-          ><i class="fa fa-fw fa-user"></i>Resume</a
-        >
-        <a id="contact" href="#contact" onclick="navClick(this)"
-          ><i class="fa fa-fw fa-envelope"></i>Contact</a
-        >
-        <a href="javascript:void(0);" class="icon" onclick="toggleMobileNav()">
-          <div
-            id="hamburger-container"
-            onclick="toggleHamburger(this)"
+        <div id="navbar">
+            <a href="#" class="active""
+            ><i class="fa fa-fw fa-home"></i
+          ></a> 
+          <a id="hamburger" href="javascript:void(0);" class="icon" onclick="toggleMobileNav()">
+              <div
+                id="hamburger-container"
+                onclick="toggleHamburger(this)"
+              >
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+            </a>
+        </div>
+        <div id="hidden-nav">
+            <a id="about" href="#about-section" onclick="navClick(this)"
+            ><i class="fa fa-fw fa-home"></i> About</a
           >
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-          </div>
-        </a>
+          <a id="search" href="#apps-section" onclick="navClick(this)"
+            ><i class="fa fa-fw fa-search"></i> Apps</a
+          >
+          <a id="blog" href="#blog-section" onclick="navClick(this)"
+          ><i class="fa fa-fw fa-user"></i> Blog</a
+        >
+          <a id="resume" href="#resume" onclick="navClick(this)"
+            ><i class="fa fa-fw fa-user"></i> Resume</a
+          >
+          <a id="contact" href="#contact" onclick="navClick(this)"
+            ><i class="fa fa-fw fa-envelope"></i> Contact</a
+          >
+        </div>
       </div>
     </section>
     <section id="banner">
       <h1 class="banner-h1">JP Earnest</h1>
     </section>
     <section id="about-section" class="section-container">
-      <h3>About</h3>
-      <div class="about-text">
+      <div class="text-container">
+          <h3>About</h3>
         <p>
           Hi!
         </p>
@@ -67,10 +74,26 @@
     </section>
     <section id="apps-section" class="section-container">
       <h3>Apps</h3>
-      <div class="app-container">
-        <h4>BookStore App</h4>
-        <img src="./bookStore.jpg" alt="bookstore app" class="app-image" />
-        <p>A brief description will go here</p>
+      <div class="text-container">
+          <div class="app-container">
+              <h4>BookStore App</h4>
+              <img src="./bookStore.jpg" alt="bookstore app" class="app-image" />
+              <p>A brief description will go here</p>
+            </div>
+      </div>
+    </section>
+    <section id="blog-section" class="section-container">
+      <div class="text-container">
+          <h3>Blog</h3>
+        <p>I like to write now and then about various topics. Here are some recent ones:</p>
+        <ul class="blog-post-links">
+          <li>
+            Link one
+          </li>
+          <li>
+            Link two
+          </li>
+        </ul>
       </div>
     </section>
   </body>
@@ -88,6 +111,12 @@
         x.className += ' responsive';
       } else {
         x.className = 'topnav';
+      }
+      var x = document.getElementById('hidden-nav');
+      if (x.className === '') {
+        x.className += ' responsive';
+      } else {
+        x.className = '';
       }
     }
     function toggleHamburger(x) {

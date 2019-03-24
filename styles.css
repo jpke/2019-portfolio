@@ -18,17 +18,29 @@ a {
 
 #nav {
   min-height: 45px;
+  position: relative;
 }
 
 .topnav {
-  overflow: hidden;
+  /* overflow: hidden; */
   position: fixed;
   width: 100%;
+}
+
+#navbar {
+  width: 100%;
+  height: 45px;
   background-color: #333;
 }
 
+#hidden-nav {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
 #hamburger-container {
-  padding-top: 11px;
+  padding-top: 8px;
 }
 
 .bar1,
@@ -85,29 +97,26 @@ a {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
+  #hidden-nav {
     display: none;
+    background-color: #333;
+    opacity: 0.9;
+    position: relative;
   }
   .topnav a.icon {
     float: right;
     display: block;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .topnav.responsive {
-    position: absolute;
-    width: 100%;
-  }
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
+  #hidden-nav.responsive {
     display: block;
+  }
+  .topnav.responsive #hidden-nav a {
+    float: none;
     text-align: left;
+  }
+  #hamburger {
+    float: right;
   }
 }
 
@@ -153,10 +162,27 @@ h3 {
   margin-bottom: 16px;
 }
 
-.about-text {
+.text-container {
   padding: 6px;
+  max-width: 564px;
+}
+
+.text-container h3 {
+  margin-left: -6px;
 }
 
 .app-image {
   margin: auto;
+}
+
+#blog-section {
+  background-color: #eef0f4;
+}
+
+.blog-post-links {
+}
+
+.blog-post-links li {
+  list-style-type: none;
+  padding: 6px;
 }
